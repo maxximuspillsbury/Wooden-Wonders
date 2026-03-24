@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Wonders | Handcrafted Hobbit Holes, Playhouses & Chicken Coops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #2d4c31;
+            --warm-brown: #6b4423;
+            --earth-tan: #f4f1ea;
+            --accent-gold: #d4a373;
+            --text-dark: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--earth-tan);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre+Baskerville', serif;
+            color: var(--forest-green);
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background-color: #fff;
+            padding: 20px 5%;
+            border-bottom: 4px solid var(--forest-green);
+            text-align: center;
+        }
+
+        .logo-area h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--warm-brown);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header-contact {
+            font-weight: bold;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background: var(--forest-green);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 60px 5%;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1510172951991-856a654063f9?auto=format&fit=crop&q=80&w=1920') center/cover;
+        }
+
+        /* --- About Section --- */
+        .about {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Products Section --- */
+        .products {
+            background-color: #e9e5db;
+            padding: 60px 5%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 60px 5%;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--warm-brown);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--forest-green);
+        }
+
+        .contact-details {
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--forest-green);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Wooden Wonders</h1>
+            <p class="tagline">Handcrafted Hobbit Holes, Playhouses & Chicken Coops</p>
+            <p class="header-contact">Call Us: 207-861-1983</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Bring a Touch of Magic to Your Backyard</h2>
+        <p>Expertly crafted in the heart of Maine.</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Our Maine Story</h2>
+        <p>Wooden Wonders is a family-run business based in Maine, dedicated to the art of fine woodworking and imaginative design. We specialize in crafting unique Hobbit Holes, playhouses, and chicken coops that blend seamlessly into the natural landscape. Each piece is built with meticulous attention to detail, ensuring your structure is as durable as it is enchanting.</p>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Signature Creations</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800" alt="Lightfoot Hobbit Hole" class="product-image">
+                <div class="product-info">
+                    <h3>Lightfoot Hobbit Hole</h3>
+                    <p>The quintessential garden retreat. Featuring our signature round door and elegant curved lines, the Lightfoot is perfect as a meditation space, kids' playhouse, or a stunning focal point for your landscape.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1548691900-309bc0f95c0f?auto=format&fit=crop&q=80&w=800" alt="Proudfoot Chicken Coop" class="product-image">
+                <div class="product-info">
+                    <h3>Proudfoot Chicken & Duck Coop</h3>
+                    <p>Give your flock a home that is both functional and beautiful. This Hobbit-style coop provides superior ventilation, easy-clean features, and maximum protection from predators with a whimsical flair.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1590332813511-38374828639e?auto=format&fit=crop&q=80&w=800" alt="Hobbit Playhouse" class="product-image">
+                <div class="product-info">
+                    <h3>Hobbit Playhouse</h3>
+                    <p>Designed specifically for the little ones. This cozy playhouse inspires hours of imaginative outdoor play, built with the same high-quality cedar and craftsmanship as our full-sized structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Start Your Adventure</h2>
+        <p>Ready to add a Wooden Wonder to your home? We ship nationwide and offer customizable options for every structure.</p>
+        
+        <div class="contact-details">
+            <p><strong>Phone:</strong> 207-861-1983</p>
+            <p><strong>Email:</strong> info@wooden-wonders.com</p>
+        </div>
+
+        <a href="mailto:info@wooden-wonders.com" class="cta-button">Request a Quote Today</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Wooden Wonders. All Rights Reserved. Handcrafted in Maine.</p>
+    </footer>
+
+</body>
+</html>
