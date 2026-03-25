@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Wonders | Handcrafted Maine Playhouses & Coops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2A4B3C; 
+            --secondary: #8B5A2B;
+            --bg-light: #F9F8F4;
+            --text-dark: #1A1A1A;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
+        .section-padding { padding: 100px 0; }
+        
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0; width: 100%; padding: 25px 5vw;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: all 0.4s ease;
+        }
+        nav.scrolled { background: rgba(255, 255, 255, 0.98); box-shadow: 0 2px 20px rgba(0,0,0,0.1); padding: 15px 5vw; }
+        .logo { font-family: var(--font-heading); font-size: 1.8rem; color: #fff; font-weight: 700; }
+        nav.scrolled .logo { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600; }
+        nav.scrolled .nav-links a { color: var(--text-dark); }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('hobbit1.jpg.JPG') center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 20px; font-style: italic; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
+
+        .btn {
+            display: inline-block; padding: 18px 45px; background: var(--primary);
+            color: #fff; border-radius: 2px; transition: 0.3s; font-weight: 600;
+        }
+        .btn:hover { background: var(--secondary); transform: translateY(-2px); }
+
+        /* BUILDS GRID */
+        .builds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .card { background: #fff; transition: 0.4s; border-radius: 4px; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-body { padding: 30px; text-align: center; }
+        .card-body h3 { font-family: var(--font-heading); margin-bottom: 10px; color: var(--primary); }
+
+        /* REVIEWS SECTION */
+        .reviews { background: #eeebe3; padding: 100px 0; text-align: center; }
+        .review-slider { max-width: 800px; margin: 0 auto; font-style: italic; font-size: 1.4rem; color: var(--primary); }
+        .review-author { display: block; margin-top: 20px; font-size: 0.9rem; font-style: normal; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 2px; }
+
+        /* GALLERY */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        .gallery-item img:hover { filter: brightness(0.8); }
+
+        /* LIGHTBOX */
+        .lightbox { 
+            display: none; position: fixed; top:0; left:0; width: 100%; height:100%; 
+            background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90%; max-height: 80vh; }
+
+        footer { background: #222; color: #999; padding: 60px 0; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .builds-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Wooden Wonders</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#builds">Our Builds</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Handcrafted Maine Playhouses</h1>
+            <p>Exceptional quality garden structures built to last generations.</p>
+            <a href="tel:207-861-1983" class="btn">Call for Pricing</a>
+        </div>
+    </header>
+
+    <section id="builds" class="section-padding">
+        <div class="container">
+            <h2 style="text-align:center; font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 50px;">Our Signature Collection</h2>
+            <div class="builds-grid">
+                <div class="card">
+                    <img src="hobbit2.jpg.PNG" alt="Signature Playhouse">
+                    <div class="card-body">
+                        <h3>The Signature Playhouse</h3>
+                        <p>Our classic design, built with Maine-sourced lumber and precision joinery.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="hobbit3.jpg.PNG" alt="Luxury Coop">
+                    <div class="card-body">
+                        <h3>The Luxury Coop</h3>
+                        <p>Functional beauty for your backyard, designed for ventilation and security.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="hobbit4.jpg.PNG" alt="Garden Cottage">
+                    <div class="card-body">
+                        <h3>Garden Cottages</h3>
+                        <p>Charming storage and workspace solutions that elevate your landscape.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="review-slider">
+                "The craftsmanship is absolutely breathtaking. It isn't just a playhouse; it's a piece of art that our children will cherish forever."
+                <span class="review-author">— The Thompson Family, Portland ME</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 style="margin-bottom:40px; font-family: var(--font-heading);">Build Inspiration</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="hobbit5.jpg.PNG" class="lb-trigger"></div>
+                <div class="gallery-item"><img src="hobbit6.jpg.PNG" class="lb-trigger"></div>
+                <div class="gallery-item"><img src="hobbit7.jpg.PNG" class="lb-trigger"></div>
+                <div class="gallery-item"><img src="hobbit8.jpg.PNG" class="lb-trigger"></div>
+                <div class="gallery-item"><img src="hobbit9.jpg.PNG" class="lb-trigger"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding" style="text-align: center; background: #fff;">
+        <div class="container">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem;">Ready to upgrade your backyard?</h2>
+            <p style="margin: 20px 0 40px;">Contact us for current lead times and shipping information.</p>
+            <a href="tel:207-861-1983" style="font-size: 1.5rem; color: var(--primary); font-weight: 600; text-decoration: none;">207-861-1983</a>
+            <br><br>
+            <a href="mailto:info@wooden-wonders.com" style="color: var(--secondary);">info@wooden-wonders.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Wooden Wonders. Handcrafted in Maine.</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img src="" id="lb-img">
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.pageYOffset > 100) { nav.classList.add('scrolled'); }
+            else { nav.classList.remove('scrolled'); }
+        };
+
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        document.querySelectorAll('.lb-trigger').forEach(img => {
+            img.onclick = () => {
+                lb.classList.add('active');
+                lbImg.src = img.src;
+            }
+        });
+        lb.onclick = () => lb.classList.remove('active');
+    </script>
+</body>
+</html>
